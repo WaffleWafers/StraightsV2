@@ -485,4 +485,4 @@ DeckGUI.o: DeckGUI.cpp DeckGUI.h \
   /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/inputstream.h \
   /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/asyncresult.h \
   /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/cancellable.h \
-  model.h subject.h
+  model.h Subject.h Card.h

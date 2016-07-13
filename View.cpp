@@ -1,37 +1,56 @@
-#include "observer.h"
 #include "view.h"
-#include "controller.h"
-#include "model.h"
-#include "subject.h"
-#include "DeckGUI.h"
 #include <iostream>
 
 // Creates buttons with labels. Sets butBox elements to have the same size, 
 // with 10 pixels between widgets
-View::View(Controller *c, Model *m) : model_(m), controller_(c), panels(true,10), butBox(true, 10), next_button( "next" ), reset_button( "reset" ), card(deck.null()) {
+View::View(Controller *c, Model *m) : model_(m), controller_(c), topToolbar(), newGameButton("Start new game with seed:"), endGameButton("End current game"), table(4, 13, true){
 
 	// Sets some properties of the window.
 	set_title( "Straights" );
 	set_border_width( 10 );
-	
-	// Add panels to the window
-	add(panels);
 
-	// Add button box and card image to the panels
-	panels.add( butBox );
-	panels.add( card );
-	card.set( deck.null() );
-
-	// Add buttons to the box (a container). Buttons initially invisible
-	butBox.add( next_button );
-	butBox.add( reset_button );
+	mainContainer.pack_start(topToolbar);
+	mainContainer.pack_start(tableFrame);
+	mainContainer.pack_start(playerListContainer);
+	mainContainer.pack_start(currentHandFrame);
 
 
-	// Associate button "clicked" events with local onButtonClicked() method defined below.
-	next_button.signal_clicked().connect( sigc::mem_fun( *this, &View::nextButtonClicked ) );
-	reset_button.signal_clicked().connect( sigc::mem_fun( *this, &View::resetButtonClicked ) );
-	
-	
+	topToolbar.pack_start(newGameButton);
+	topToolbar.pack_start(randomSeedEntry);
+	topToolbar.pack_start(endGameButton);
+
+
+	table.set_row_spacings(1);
+	table.set_col_spacings(6);
+
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 13; j++) {
+			cardsOnTable[i][j] = new Gtk::Image(deck.getCardImage(static_cast<Suit>(i), static_cast<Rank>(j)));
+			table.attach(*cardsOnTable[i][j], j, j+1, i, i+1);
+		}
+	}
+
+	tableFrame.set_label("Cards on the table");
+	tableFrame.add( table );
+
+
+	for (int i = 0; i < 4; i++) {
+		playerFrames[i] = new PlayerFrame(i + 1, model_, this, controller_);
+		playerListContainer.pack_start(*playerFrames[i]);
+	}
+
+
+	for (int i = 0; i < 13; i++) {
+		cardsInHand[i] = new Gtk::Image(deck.getNullCardImage());
+		handContainer.pack_start(*cardsInHand[i]);
+	}
+
+	currentHandFrame.set_label("Your hand");
+	currentHandFrame.add(handContainer);
+
+
+	add( mainContainer );
+
 	// The final step is to display the buttons (they display themselves)
 	show_all();
 
@@ -44,19 +63,5 @@ View::~View() {}
 
 
 void View::update() {
-  Suits suit = model_->suit();
-  Faces face = model_->face();
-  if ( suit == NOSUIT ) 
-    card.set( deck.null() );
-  else
-    card.set( deck.image(face, suit) );
 
 }
-
-void View::nextButtonClicked() {
-  controller_->nextButtonClicked();
-} // View::nextButtonClicked
-
-void View::resetButtonClicked() {
-  controller_->resetButtonClicked();
-} // View::resetButtonClicked

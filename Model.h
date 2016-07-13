@@ -4,20 +4,18 @@
 #include <vector>
 #include <string>
 
-#include "subject.h"
+#include "Subject.h"
+#include "Card.h"
 
-const int numFaces = 6;
+const int numRanks = 13;
 const int numSuits = 4;
-const int numCards = numFaces * numSuits;
-
-enum Faces { NINE, TEN, JACK, QUEEN, KING, ACE, NOFACE };
-enum Suits { DIAMOND, CLUB, HEART, SPADE, NOSUIT };
+const int numCards = numRanks * numSuits;
 
 class Model : public Subject {
 public:
     Model();
-    Suits suit();
-    Faces face();
+    Rank rank();
+    Suit suit();
     void nextCard();
     void resetCards();
 private:

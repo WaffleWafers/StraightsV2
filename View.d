@@ -1,4 +1,4 @@
-View.o: View.cpp observer.h view.h \
+View.o: View.cpp view.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm.h \
   /usr/local/Cellar/glibmm/2.46.3/include/glibmm-2.4/glibmm.h \
   /usr/local/Cellar/glibmm/2.46.3/lib/glibmm-2.4/include/glibmmconfig.h \
@@ -1061,4 +1061,5 @@ View.o: View.cpp observer.h view.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/uimanager.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/actiongroup.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/viewport.h \
-  DeckGUI.h model.h subject.h controller.h
+  PlayerFrame.h DeckGUI.h model.h Subject.h Card.h Observer.h \
+  Controller.h

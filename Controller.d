@@ -1061,4 +1061,4 @@ Controller.o: Controller.cpp controller.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/uimanager.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/actiongroup.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/viewport.h \
-  model.h subject.h
+  model.h Subject.h Card.h

@@ -1,30 +1,18 @@
-/*
- * MVC example of GTKmm program
- *
- * Model class.  Is responsible keeping track of the deck of cards.  
- * It knows nothing about views or controllers.
- *
- *  Created by Jo Atlee on 06/07/09.
- *  Copyright 2009 UW. All rights reserved.
- *
- */
-
-
 #include "model.h"
 
 
 Model::Model() : topCard_(-1) {}
 
-Suits Model::suit() {
-  if (topCard_ == -1) return NOSUIT;
+Suit Model::suit() {
+  if (topCard_ == -1) return SUIT_COUNT;
   
-  return (Suits) (topCard_ % numSuits);
+  return (Suit) (topCard_ % numSuits);
 }
 
-Faces Model::face() {
-  if (topCard_ == -1) return NOFACE;
+Rank Model::rank() {
+  if (topCard_ == -1) return RANK_COUNT;
 
-  return (Faces) (topCard_ / numSuits);
+  return (Rank) (topCard_ / numSuits);
 }
 
 void Model::nextCard() {
@@ -34,7 +22,6 @@ void Model::nextCard() {
   notify();
 
 }
-
 
 void Model::resetCards() {
   topCard_ = -1;

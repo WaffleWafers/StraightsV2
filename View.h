@@ -2,8 +2,12 @@
 #define _VIEW_
 
 #include <gtkmm.h>
+#include "PlayerFrame.h"
 #include "DeckGUI.h"
-#include "observer.h"
+#include "Observer.h"
+#include "Controller.h"
+#include "Card.h"
+
 
 class Controller;
 class Model;
@@ -16,25 +20,29 @@ public:
 	virtual void update();	// Observer Pattern: concrete update() method
 
 private:
-	// Observer Pattern: to access Model accessors without having to downcast subject
-	Model *model_;
-	
-	// Strategy Pattern member (plus signal handlers)
-	Controller *controller_;
+	Model* model_;
+	Controller* controller_;
 
 	// Card Images
 	DeckGUI deck;
 
-	// Member widgets:
-	Gtk::HBox panels;      // Main window divided into two horizontal panels
-	Gtk::VBox butBox;      // Vertical boxes for stacking buttons vertically
-	Gtk::Button next_button;
-	Gtk::Button reset_button;
-	Gtk::Image card;
+	Gtk::VBox mainContainer;
 
-	// Signal handlers:
-	void nextButtonClicked();
-	void resetButtonClicked();
+	Gtk::HBox topToolbar;
+	Gtk::Button newGameButton;
+	Gtk::Entry randomSeedEntry;
+	Gtk::Button endGameButton;
+
+	Gtk::Frame tableFrame;
+	Gtk::Table table;
+	Gtk::Image* cardsOnTable[4][13];
+
+	Gtk::HBox playerListContainer;
+	PlayerFrame* playerFrames[4];
+
+	Gtk::Frame currentHandFrame;
+	Gtk::HBox handContainer;
+	Gtk::Image* cardsInHand[13];
 
 }; // View
 

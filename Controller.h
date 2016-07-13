@@ -8,8 +8,6 @@ class Model;
 class Controller {
 public:
    Controller( Model* );
-   void nextButtonClicked();
-   void resetButtonClicked();
 private:
    Model *model_;
 };
