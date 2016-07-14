@@ -1,5 +1,5 @@
-Straights.o: Straights.cpp \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm.h \
+CardButton.o: CardButton.cpp CardButton.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/button.h \
   /usr/local/Cellar/glibmm/2.46.3/include/glibmm-2.4/glibmm.h \
   /usr/local/Cellar/glibmm/2.46.3/lib/glibmm-2.4/include/glibmmconfig.h \
   /usr/local/Cellar/glibmm/2.46.3/include/glibmm-2.4/glibmm/thread.h \
@@ -200,8 +200,96 @@ Straights.o: Straights.cpp \
   /usr/local/Cellar/glibmm/2.46.3/include/glibmm-2.4/glibmm/variantdict.h \
   /usr/local/Cellar/glibmm/2.46.3/include/glibmm-2.4/glibmm/vectorutils.h \
   /usr/local/Cellar/glibmm/2.46.3/include/glibmm-2.4/glibmm/weakref.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/action.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/bin.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/container.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/widget.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/lib/gtkmm-2.4/include/gtkmmconfig.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/lib/gdkmm-2.4/include/gdkmmconfig.h \
+  /usr/local/Cellar/pangomm/2.38.1/lib/pangomm-1.4/include/pangommconfig.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/context.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontdescription.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-font.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-coverage.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-types.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-gravity.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-matrix.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-script.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-language.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-bidi-type.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontmetrics.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontset.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/language.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-attributes.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/font.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/rectangle.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/glyph.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-glyph.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-item.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/coverage.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-fontset.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontmap.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontfamily.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontface.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-fontmap.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/item.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/attributes.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/color.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/attrlist.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/attriter.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/types.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-context.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/context.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/surface.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/enums.h \
+  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo.h \
+  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-version.h \
+  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-features.h \
+  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-deprecated.h \
+  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-ft.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/ft2build.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/config/ftheader.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/freetype.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/config/ftconfig.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/config/ftoption.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/config/ftstdlib.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/fttypes.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/ftsystem.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/ftimage.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/fterrors.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/ftmoderr.h \
+  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/fterrdef.h \
+  /usr/local/Cellar/fontconfig/2.11.1_2/include/fontconfig/fontconfig.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/exception.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/device.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/types.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/refptr.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/fontoptions.h \
+  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-pdf.h \
+  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-ps.h \
+  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-svg.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/fontface.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/matrix.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/pattern.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/path.h \
+  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/scaledfont.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/layout.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/tabarray.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-tabs.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-break.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/layoutline.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-layout.h \
+  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-glyph-item.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/layoutiter.h \
+  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/layoutrun.h \
+  /usr/local/Cellar/atkmm/2.24.2/include/atkmm-1.6/atkmm/object.h \
+  /usr/local/Cellar/atkmm/2.24.2/include/atkmm-1.6/atkmm/component.h \
+  /usr/local/Cellar/atkmm/2.24.2/include/atkmm-1.6/atkmm/relation.h \
+  /usr/local/Cellar/atkmm/2.24.2/include/atkmm-1.6/atkmm/implementor.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/event.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/window.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/region.h \
+  /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gdk/gdk.h \
+  /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/gio/gio.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/gio/giotypes.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/gio/gioenums.h \
@@ -345,169 +433,12 @@ Straights.o: Straights.cpp \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/gio/glistmodel.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/gio/gliststore.h \
   /usr/local/Cellar/glib/2.46.2/include/glib-2.0/gio/gio-autocleanups.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/actiongroup.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/actionmap.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/simpleaction.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/appinfo.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/applaunchcontext.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/icon.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/application.h \
-  /usr/local/Cellar/glibmm/2.46.3/lib/giomm-2.4/include/giommconfig.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/applicationcommandline.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/file.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/asyncresult.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileattributeinfolist.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileattributeinfo.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileenumerator.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/cancellable.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileinfo.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileinputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/inputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/seekable.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileiostream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/iostream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/outputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/filemonitor.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileoutputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/mountoperation.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/drive.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/mount.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/error.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusconnection.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/initable.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/asyncinitable.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusauthobserver.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/credentials.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusmethodinvocation.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusmessage.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixfdlist.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusintrospection.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbussubtreevtable.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusinterfacevtable.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/notification.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/bufferedinputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/filterinputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/bufferedoutputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/filteroutputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/charsetconverter.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/converter.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/contenttype.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/converterinputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/pollableinputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/converteroutputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/pollableoutputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/datainputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/enums.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dataoutputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusactiongroup.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/remoteactiongroup.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusaddress.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbuserror.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbuserrorutils.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusinterface.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusmenumodel.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/menumodel.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusobject.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusownname.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusproxy.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusserver.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusutils.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbuswatchname.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/desktopappinfo.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/emblem.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/emblemedicon.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileicon.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/loadableicon.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/filenamecompleter.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/inetaddress.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/inetsocketaddress.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketaddress.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketconnectable.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketaddressenumerator.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/init.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/wrap_init.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/memoryinputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/memoryoutputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/menu.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/menuitem.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/menuattributeiter.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/menulinkiter.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/networkaddress.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/networkservice.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/permission.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/proxy.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/proxyaddress.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/proxyresolver.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/resolver.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/srvtarget.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/resource.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/settings.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/settingsschema.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/settingsschemakey.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/simpleactiongroup.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/simpleiostream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/simplepermission.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socket.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketclient.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketconnection.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketcontrolmessage.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketlistener.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketservice.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketsource.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tcpconnection.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tcpwrapperconnection.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/themedicon.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/threadedsocketservice.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlscertificate.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlsclientconnection.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlsconnection.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlsdatabase.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlsinteraction.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlspassword.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlsserverconnection.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixconnection.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixcredentialsmessage.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixfdmessage.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixinputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixoutputstream.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixsocketaddress.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/volume.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/volumemonitor.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/zlibcompressor.h \
-  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/zlibdecompressor.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/screen.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/region.h \
-  /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gdk/gdk.h \
-  /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
   /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gdk/gdkscreen.h \
-  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo.h \
-  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-version.h \
-  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-features.h \
-  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-deprecated.h \
   /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gdk/gdktypes.h \
   /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-attributes.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-font.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-coverage.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-types.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-gravity.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-matrix.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-script.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-language.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-bidi-type.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-break.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-item.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-context.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-fontmap.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-fontset.h \
   /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-engine.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-glyph.h \
   /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-enum-types.h \
   /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-features.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-glyph-item.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-layout.h \
-  /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-tabs.h \
   /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-renderer.h \
   /usr/local/Cellar/pango/1.38.1/include/pango-1.0/pango/pango-utils.h \
   /usr/local/Cellar/gtk+/2.24.30/lib/gtk-2.0/include/gdkconfig.h \
@@ -548,87 +479,29 @@ Straights.o: Straights.cpp \
   /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gdk/gdkwindow.h \
   /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gdk/gdkvisual.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/types.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/lib/gdkmm-2.4/include/gdkmmconfig.h \
-  /usr/local/Cellar/pangomm/2.38.1/lib/pangomm-1.4/include/pangommconfig.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/rectangle.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/fontoptions.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/enums.h \
-  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-ft.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/ft2build.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/config/ftheader.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/freetype.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/config/ftconfig.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/config/ftoption.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/config/ftstdlib.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/fttypes.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/ftsystem.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/ftimage.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/fterrors.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/ftmoderr.h \
-  /usr/local/Cellar/freetype/2.6.3/include/freetype2/freetype/fterrdef.h \
-  /usr/local/Cellar/fontconfig/2.11.1_2/include/fontconfig/fontconfig.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/visual.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/gc.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/drawable.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/font.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/rectangle.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/language.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/glyph.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontdescription.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontmetrics.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/coverage.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/layout.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/context.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontset.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontmap.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontfamily.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/fontface.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/item.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/attributes.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/color.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/attrlist.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/attriter.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/types.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/context.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/surface.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/exception.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/device.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/types.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/refptr.h \
-  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-pdf.h \
-  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-ps.h \
-  /usr/local/Cellar/cairo/1.14.6_1/include/cairo/cairo-svg.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/fontface.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/matrix.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/pattern.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/path.h \
-  /usr/local/Cellar/cairomm/1.12.0/include/cairomm-1.0/cairomm/scaledfont.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/tabarray.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/layoutline.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/layoutiter.h \
-  /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/layoutrun.h \
   /usr/local/Cellar/pangomm/2.38.1/include/pangomm-1.4/pangomm/glyphstring.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/gc.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/screen.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/image.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/visual.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/colormap.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/color.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/rgbcmap.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/window.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/bitmap.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/pixmap.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/dragcontext.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/pixbuf.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/pixbufformat.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/pixbufanimation.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/pixbufanimationiter.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/pixbufloader.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/cursor.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/inputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/asyncresult.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/cancellable.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/enums.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/display.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/device.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/event.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/displaymanager.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/general.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/rgb.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/box.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/targetlist.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/targetentry.h \
   /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gtk/gtk.h \
   /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gtk/gtkaboutdialog.h \
   /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gtk/gtkdialog.h \
@@ -874,16 +747,6 @@ Straights.o: Straights.cpp \
   /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gtk/gtkoptionmenu.h \
   /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gtk/gtkpreview.h \
   /usr/local/Cellar/gtk+/2.24.30/include/gtk-2.0/gtk/gtktipsquery.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/container.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/widget.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/lib/gtkmm-2.4/include/gtkmmconfig.h \
-  /usr/local/Cellar/atkmm/2.24.2/include/atkmm-1.6/atkmm/object.h \
-  /usr/local/Cellar/atkmm/2.24.2/include/atkmm-1.6/atkmm/component.h \
-  /usr/local/Cellar/atkmm/2.24.2/include/atkmm-1.6/atkmm/relation.h \
-  /usr/local/Cellar/atkmm/2.24.2/include/atkmm-1.6/atkmm/implementor.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/enums.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/targetlist.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/targetentry.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/rc.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/style.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/object.h \
@@ -893,10 +756,151 @@ Straights.o: Straights.cpp \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/stockid.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/clipboard.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/selectiondata.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/image.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/misc.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/pixbufanimation.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/pixbufanimationiter.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/icon.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/label.h \
+  Card.h View.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/action.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/actiongroup.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/actionmap.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/simpleaction.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/appinfo.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/applaunchcontext.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/application.h \
+  /usr/local/Cellar/glibmm/2.46.3/lib/giomm-2.4/include/giommconfig.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/applicationcommandline.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/file.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileattributeinfolist.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileattributeinfo.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileenumerator.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileinfo.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileinputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/seekable.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileiostream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/iostream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/outputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/filemonitor.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileoutputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/mountoperation.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/drive.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/mount.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/error.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusconnection.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/initable.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/asyncinitable.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusauthobserver.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/credentials.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusmethodinvocation.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusmessage.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixfdlist.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusintrospection.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbussubtreevtable.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusinterfacevtable.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/notification.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/bufferedinputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/filterinputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/bufferedoutputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/filteroutputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/charsetconverter.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/converter.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/contenttype.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/converterinputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/pollableinputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/converteroutputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/pollableoutputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/datainputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/enums.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dataoutputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusactiongroup.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/remoteactiongroup.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusaddress.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbuserror.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbuserrorutils.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusinterface.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusmenumodel.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/menumodel.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusobject.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusownname.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusproxy.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusserver.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbusutils.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/dbuswatchname.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/desktopappinfo.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/emblem.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/emblemedicon.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/fileicon.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/loadableicon.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/filenamecompleter.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/inetaddress.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/inetsocketaddress.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketaddress.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketconnectable.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketaddressenumerator.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/init.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/wrap_init.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/memoryinputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/memoryoutputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/menu.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/menuitem.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/menuattributeiter.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/menulinkiter.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/networkaddress.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/networkservice.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/permission.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/proxy.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/proxyaddress.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/proxyresolver.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/resolver.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/srvtarget.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/resource.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/settings.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/settingsschema.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/settingsschemakey.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/simpleactiongroup.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/simpleiostream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/simplepermission.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socket.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketclient.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketconnection.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketcontrolmessage.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketlistener.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketservice.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/socketsource.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tcpconnection.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tcpwrapperconnection.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/themedicon.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/threadedsocketservice.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlscertificate.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlsclientconnection.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlsconnection.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlsdatabase.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlsinteraction.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlspassword.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/tlsserverconnection.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixconnection.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixcredentialsmessage.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixfdmessage.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixinputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixoutputstream.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/unixsocketaddress.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/volume.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/volumemonitor.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/zlibcompressor.h \
+  /usr/local/Cellar/glibmm/2.46.3/include/giomm-2.4/giomm/zlibdecompressor.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/pixbufloader.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/cursor.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/displaymanager.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/general.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gdkmm-2.4/gdkmm/rgb.h \
+  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/box.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/dialog.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/window.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/bin.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/button.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/buttonbox.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/aboutdialog.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/accelkey.h \
@@ -906,7 +910,6 @@ Straights.o: Straights.cpp \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/adjustment.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/alignment.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/arrow.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/misc.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/aspectframe.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/frame.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/assistant.h \
@@ -931,7 +934,6 @@ Straights.o: Straights.cpp \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/menuitem.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/item.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/accellabel.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/label.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/cellrenderercombo.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/cellrendererprogress.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/cellrendererspin.h \
@@ -951,7 +953,6 @@ Straights.o: Straights.cpp \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/tearoffmenuitem.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/separatormenuitem.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/entrycompletion.h \
-  /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/image.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/entrybuffer.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/combobox.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/treeview.h \
@@ -1061,6 +1062,5 @@ Straights.o: Straights.cpp \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/uimanager.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/actiongroup.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/viewport.h \
-  Model.h Subject.h Card.h ComputerPlayer.h Player.h HumanPlayer.h \
-  View.h PlayerFrame.h CardButton.h NewGameDialog.h DeckGUI.h Observer.h \
-  Controller.h
+  PlayerFrame.h NewGameDialog.h DeckGUI.h model.h Subject.h \
+  ComputerPlayer.h Player.h HumanPlayer.h Observer.h Controller.h

@@ -3,6 +3,8 @@
 
 #include <gtkmm.h>
 #include "PlayerFrame.h"
+#include "CardButton.h"
+#include "NewGameDialog.h"
 #include "DeckGUI.h"
 #include "Observer.h"
 #include "Controller.h"
@@ -18,12 +20,19 @@ public:
 	View( Controller*, Model* );
 	virtual ~View();
 	virtual void update();	// Observer Pattern: concrete update() method
+	void setHandDisplayed(std::vector<Card*>);
+
+	Glib::RefPtr<Gdk::Pixbuf> getCardImage(Suit s, Rank r) const;
+	Glib::RefPtr<Gdk::Pixbuf> getNullCardImage() const;
+
 
 private:
 	Model* model_;
 	Controller* controller_;
 
-	// Card Images
+	void newGameButtonClicked();
+	void endGameButtonClicked();
+
 	DeckGUI deck;
 
 	Gtk::VBox mainContainer;
@@ -42,7 +51,7 @@ private:
 
 	Gtk::Frame currentHandFrame;
 	Gtk::HBox handContainer;
-	Gtk::Image* cardsInHand[13];
+	CardButton* cardsInHand[13];
 
 }; // View
 
