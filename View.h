@@ -20,7 +20,7 @@ public:
 	View( Controller*, Model* );
 	virtual ~View();
 	virtual void update();	// Observer Pattern: concrete update() method
-	void setHandDisplayed(std::vector<Card*>);
+	void setHandDisplayed(std::vector<Card*>, std::vector<Card*>);
 
 	Glib::RefPtr<Gdk::Pixbuf> getCardImage(Suit s, Rank r) const;
 	Glib::RefPtr<Gdk::Pixbuf> getNullCardImage() const;

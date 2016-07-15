@@ -51,10 +51,10 @@ void Model::initDeck(){
 void Model::initPlayers(){
 	for (int i = 0 ; i < 4 ; i++){
 		if (playerTypes_[i] == 'h'){
-			HumanPlayer* hPlayer = (new HumanPlayer(i+1));
+			HumanPlayer* hPlayer = (new HumanPlayer(i+1, this));
 			players_.push_back((Player*) hPlayer);
 		} else {
-			ComputerPlayer* cPlayer = (new ComputerPlayer(i+1));
+			ComputerPlayer* cPlayer = (new ComputerPlayer(i+1, this));
 			players_.push_back((Player*) cPlayer);
 		}
 	}

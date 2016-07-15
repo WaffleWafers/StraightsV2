@@ -7,7 +7,7 @@
 
 class ComputerPlayer: public Player{
 public:
-	ComputerPlayer(int num) : Player(num) {};
+	ComputerPlayer(int num, Model* model) : Player(num, model) {};
 	ComputerPlayer(const Player& p): Player(p){};
 
 	bool playCard(Card*);

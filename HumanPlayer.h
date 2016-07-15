@@ -6,7 +6,7 @@
 
 class HumanPlayer: public Player{
 public:
-	HumanPlayer(int num): Player(num) {};
+	HumanPlayer(int num, Model* model): Player(num, model) {};
 
 	bool playCard(Card*);
 	bool discardCard(Card*);

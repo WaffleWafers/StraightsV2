@@ -5,9 +5,11 @@
 #include <string>
 #include "Card.h"
 
+class Model;
+
 class Player{
 public:
-	explicit Player(int);
+	explicit Player(int, Model*);
 	virtual ~Player();
 	Player(const Player&);
 	Player& operator=(const Player&);
@@ -19,9 +21,11 @@ public:
 	void setRoundScore(int score)						{roundScore_ = score;}
 	void setPlayerNo(int num)							{playerNo_ = num;}
 	void setValidPlay(bool isValid)						{validPlay_ = isValid;}
+	void setModel(Model* model)							{model_ = model;}
 	void resetRoundScore()								{roundScore_ = 0;}
 
 	void addCard(Card*);
+	std::vector<Card*> getLegalCards();
 
 	virtual bool playCard(Card*) = 0;
 	virtual bool discardCard(Card*) = 0;
@@ -33,10 +37,12 @@ public:
 	int getOldScore() const								{return oldScore_;}	
 	int getRoundScore() const							{return roundScore_;}
 	int getPlayerNo() const								{return playerNo_;}
+	Model* getModel() const								{return model_;}
 
 	void newRoundReset();
 
 protected:
+	Model* model_;
 	std::vector<Card*> hand_;
 	std::vector<Card*> discards_;
 	bool validPlay_;

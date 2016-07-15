@@ -97,10 +97,11 @@ View::~View() {
 
 void View::update() {
 	if (model_->getState() == Model::ROUND_STARTED){
+		setHandDisplayed(model_->getCurrentPlayer()->getHand(), model_->getCurrentPlayer()->getLegalCards());
 		setTableDisplay();
 	}
 	else if (model_->getState() == Model::IN_PROGRESS){
-		setHandDisplayed(model_->getCurrentPlayer()->getHand());
+		setHandDisplayed(model_->getCurrentPlayer()->getHand(), model_->getCurrentPlayer()->getLegalCards());
 		setTableDisplay();
 	}
 
@@ -119,17 +120,32 @@ void View::endGameButtonClicked() {
 }
 
 
-void View::setHandDisplayed(vector<Card*> hand){
-	for (int i = 0; i < 13; i++){
-		bool cardExists = !hand.empty() && i < hand.size();
+void View::setHandDisplayed(vector<Card*> hand, vector<Card*> legalCards){
 
-		if (cardExists){
-			cardsInHand[i]->setCard(hand.at(i));
+	bool noLegalPlays = legalCards.empty();
+	printf("Number of legal cards: %lu\n", legalCards.size());
+
+	for (int i = 0; i < 13; i++){
+		if (noLegalPlays){
+			cardsInHand[i]->setCard(hand.at(i), true, true);
+		}
+		else if (!hand.empty() && i < hand.size()){
+			bool legalCardMatches = false;
+
+			for(unsigned int j = 0; j < legalCards.size(); j++){
+				if(hand.at(i)->getSuit() == legalCards[j]->getSuit() &&
+					hand.at(i)->getRank() == legalCards[j]->getRank()){
+						legalCardMatches = true;
+						break;
+				}
+			}
+			cardsInHand[i]->setCard(hand.at(i), legalCardMatches, false);
 		}
 		else {
-			cardsInHand[i]->setCard(NULL);
+			cardsInHand[i]->setCard(NULL, false, false);
 		}
 	}
+	printf("No error yet\n");
 }
 
 

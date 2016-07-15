@@ -14,7 +14,7 @@ public:
 	void startRound(); // shuffle the deck once and then deal the cards to the players
 	void endGame();
 	void setSeed(int);
-	void playTurn(Card*);
+	void playTurn(Card*, bool);
 
 private:
 	Model* model_;

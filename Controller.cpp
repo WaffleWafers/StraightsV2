@@ -45,9 +45,15 @@ void Controller::startRound(){
 	model_->setState(Model::IN_PROGRESS);
 }
 
-void Controller::playTurn(Card* card){
-	if (model_->playCard(card)){
-		model_->advanceToNextPlayer();
+void Controller::playTurn(Card* card, bool isDiscard){
+	if (!isDiscard){
+		model_->playCard(card);
+		printf("card played\n");
+	} else {
+		model_->discardCard(card);
+		printf("card discarded\n");
 	}
+
+	model_->advanceToNextPlayer();
 
 }

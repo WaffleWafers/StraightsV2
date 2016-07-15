@@ -16,7 +16,7 @@ class CardButton : public Gtk::Button {
 public:
 	CardButton(Model*, View*, Controller*);
 	virtual ~CardButton();
-	void setCard(Card*);
+	void setCard(Card*, bool enableButton, bool discard);
 
 private:
 	Model* model_;
@@ -27,6 +27,7 @@ private:
 
 	Gtk::Image* image_;
 	Card* currentCard_;
+	bool isDiscard_;
 };
 
 #endif
