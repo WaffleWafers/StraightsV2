@@ -33,6 +33,8 @@ private:
 	void newGameButtonClicked();
 	void endGameButtonClicked();
 
+	void resetTableDisplay();
+
 	DeckGUI deck;
 
 	Gtk::VBox mainContainer;

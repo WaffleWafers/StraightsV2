@@ -4,10 +4,15 @@
 
 Controller::Controller(Model *m) : model_(m) {}
 
-// set seed and start game
-void Controller::startGame(int seed){
-	initializeModel();
+// set seed
+void Controller::setSeed(int seed){
 	model_->setSeed(seed);
+}
+
+
+// start game
+void Controller::startGame(){
+	initializeModel();
 	startRound();
 }
 
@@ -27,13 +32,13 @@ void Controller::endGame(){
 
 // set up the start of a new round
 void Controller::startRound(){
+	for (int i = 0; i < 4; i++){
+		model_->getPlayer(i)->newRoundReset();
+	}
 	model_->clearCardsFromTable();
 	model_->shuffle();
 	model_->deal();
 
-	for (int i = 0; i < 4; i++){
-		model_->getPlayer(i)->newRoundReset();
-	}
-
 	model_->setCurrentPlayer(model_->getFirstPlayer()->getPlayerNo()-1);
+	model_->updateView();
 }

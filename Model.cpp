@@ -60,6 +60,12 @@ void Model::initPlayers(){
 	}
 }
 
+
+int Model::getSeed() const{
+	return seed_;
+}
+
+
 void Model::setSeed(int seed){
 	seed_ = seed;
 }
@@ -155,4 +161,8 @@ Card* Model::getCard(Card card){
 	}
 
 	return c;
+}
+
+void Model::updateView(){
+	notify();
 }

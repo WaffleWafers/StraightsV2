@@ -1,5 +1,8 @@
 #include "View.h"
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 // Creates buttons with labels. Sets butBox elements to have the same size, 
 // with 10 pixels between widgets
@@ -21,6 +24,7 @@ View::View(Controller *c, Model *m) : model_(m), controller_(c), topToolbar(), n
 	// Add random seed, new game and end game buttons to the toolbar
 	topToolbar.pack_start(newGameButton);
 	topToolbar.pack_start(randomSeedEntry);
+	randomSeedEntry.set_text(to_string(model_->getSeed()));
 	topToolbar.pack_start(endGameButton);
 
 
@@ -92,12 +96,16 @@ View::~View() {
 
 
 void View::update() {
+
+	resetTableDisplay();
 	setHandDisplayed(model_->getCurrentPlayer()->getHand());
+
 }
 
 
 void View::newGameButtonClicked() {
-	controller_->startGame(0);
+	controller_->setSeed(atoi(static_cast<string>(randomSeedEntry.get_text()).c_str()));
+	controller_->startGame();
 }
 
 
@@ -106,7 +114,7 @@ void View::endGameButtonClicked() {
 }
 
 
-void View::setHandDisplayed(std::vector<Card*> hand){
+void View::setHandDisplayed(vector<Card*> hand){
 	for (int i = 0; i < 13; i++){
 		bool cardExists = !hand.empty() && i < hand.size();
 
@@ -115,6 +123,15 @@ void View::setHandDisplayed(std::vector<Card*> hand){
 		}
 		else {
 			cardsInHand[i]->setCard(NULL);
+		}
+	}
+}
+
+
+void View::resetTableDisplay(){
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 13; j++) {
+			cardsOnTable[i][j]->set(deck.getNullCardImage());
 		}
 	}
 }

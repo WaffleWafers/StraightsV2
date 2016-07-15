@@ -15,6 +15,8 @@ CardButton::~CardButton() {
 }
 
 void CardButton::setCard(Card* card){
+	currentCard_ = card;
+
 	delete image_;
 
 	if (card)

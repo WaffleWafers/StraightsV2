@@ -23,6 +23,7 @@ public:
 	Player* getCurrentPlayer() const;
 	Player* getPlayer(int) const;
 	std::vector<Card*> getDeck() const;
+	int getSeed() const;
 
 	void setPlayerType(int, char); // Populates playerTypes_ array with types of players (int playerNumber, char playerType)
 	void initDeck(); // Initialize the deck (populates deck_ with New Card's)
@@ -37,6 +38,7 @@ public:
 	void deleteCardsAndPlayers();
 	void clearCardsFromTable(); // Empties table of all cards (sets all of 2D array to false)
 	void cleanUp();
+	void updateView();
 
 private:
 	Card* getCard(Card);
