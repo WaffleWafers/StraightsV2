@@ -4,6 +4,7 @@
 #include <gtkmm.h>
 
 class Model;
+class Card;
 
 class Controller {
 public:
@@ -13,6 +14,7 @@ public:
 	void startRound(); // shuffle the deck once and then deal the cards to the players
 	void endGame();
 	void setSeed(int);
+	void playTurn(Card*);
 
 private:
 	Model* model_;

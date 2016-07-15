@@ -96,9 +96,13 @@ View::~View() {
 
 
 void View::update() {
-
-	resetTableDisplay();
-	setHandDisplayed(model_->getCurrentPlayer()->getHand());
+	if (model_->getState() == Model::ROUND_STARTED){
+		setTableDisplay();
+	}
+	else if (model_->getState() == Model::IN_PROGRESS){
+		setHandDisplayed(model_->getCurrentPlayer()->getHand());
+		setTableDisplay();
+	}
 
 }
 
@@ -111,6 +115,7 @@ void View::newGameButtonClicked() {
 
 void View::endGameButtonClicked() {
 	controller_->endGame();
+	exit(EXIT_SUCCESS);
 }
 
 
@@ -128,10 +133,15 @@ void View::setHandDisplayed(vector<Card*> hand){
 }
 
 
-void View::resetTableDisplay(){
+void View::setTableDisplay(){
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 13; j++) {
-			cardsOnTable[i][j]->set(deck.getNullCardImage());
+			if (!model_->hasBeenPlayed(static_cast<Suit>(i), static_cast<Rank>(j))) {
+				cardsOnTable[i][j]->set(deck.getNullCardImage());
+			}
+			else {
+				cardsOnTable[i][j]->set(deck.getCardImage(static_cast<Suit>(i), static_cast<Rank>(j)));
+			}
 		}
 	}
 }

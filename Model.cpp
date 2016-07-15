@@ -98,19 +98,20 @@ void Model::deal(){
 }
 
 // play card for curr. player
-bool Model::playCard(Card card){
-	currentCardsOut_[card.getSuit()][card.getRank()] = true;
-	return players_[currentPlayer_]->playCard(getCard(card));
+bool Model::playCard(Card* card){
+	currentCardsOut_[card->getSuit()][card->getRank()] = true;
+	return players_[currentPlayer_]->playCard(card);
 }
 
 // discard card for curr. player
-bool Model::discardCard(Card card){
-	return players_[currentPlayer_]->discardCard(getCard(card));
+bool Model::discardCard(Card* card){
+	return players_[currentPlayer_]->discardCard(card);
 }
 
 // new player turn
 void Model::advanceToNextPlayer(){
 	currentPlayer_ = (currentPlayer_ + 1) % 4;
+	notify();
 }
 
 // when player ragequits, replace with computer player
@@ -163,6 +164,17 @@ Card* Model::getCard(Card card){
 	return c;
 }
 
-void Model::updateView(){
+
+Model::State Model::getState() const{
+	return state_;
+}
+
+
+void Model::setState(State state) {
+	state_ = state;
 	notify();
+}
+
+bool Model::hasBeenPlayed(Suit s, Rank r) const{
+	return currentCardsOut_[s][r];
 }

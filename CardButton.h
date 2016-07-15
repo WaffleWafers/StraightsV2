@@ -23,6 +23,8 @@ private:
 	View* view_;
 	Controller* controller_;
 
+	void cardPlayed();
+
 	Gtk::Image* image_;
 	Card* currentCard_;
 };

@@ -1,6 +1,7 @@
 #include "Controller.h"
 #include "Model.h"
 
+class Card;
 
 Controller::Controller(Model *m) : model_(m) {}
 
@@ -40,5 +41,13 @@ void Controller::startRound(){
 	model_->deal();
 
 	model_->setCurrentPlayer(model_->getFirstPlayer()->getPlayerNo()-1);
-	model_->updateView();
+	model_->setState(Model::ROUND_STARTED);
+	model_->setState(Model::IN_PROGRESS);
+}
+
+void Controller::playTurn(Card* card){
+	if (model_->playCard(card)){
+		model_->advanceToNextPlayer();
+	}
+
 }

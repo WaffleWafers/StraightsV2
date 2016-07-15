@@ -8,11 +8,19 @@ CardButton::CardButton(Model* model, View* view, Controller* controller): model_
 	image_ = new Gtk::Image(view_->getNullCardImage());
 	set_image(*image_);
 
+	signal_clicked().connect( sigc::mem_fun( *this, &CardButton::cardPlayed ) );
+
 }
 
 CardButton::~CardButton() {
 	delete image_;
 }
+
+
+void CardButton::cardPlayed(){
+	controller_->playTurn(currentCard_);
+}
+
 
 void CardButton::setCard(Card* card){
 	currentCard_ = card;

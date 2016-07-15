@@ -33,7 +33,7 @@ private:
 	void newGameButtonClicked();
 	void endGameButtonClicked();
 
-	void resetTableDisplay();
+	void setTableDisplay();
 
 	DeckGUI deck;
 

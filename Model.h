@@ -15,6 +15,8 @@ public:
 	Model(int);
 	~Model();
 
+	enum State { ROUND_STARTED, IN_PROGRESS };
+
 	void setCurrentPlayer(int);
 	// modifies this.currentPlayer_
 
@@ -24,27 +26,30 @@ public:
 	Player* getPlayer(int) const;
 	std::vector<Card*> getDeck() const;
 	int getSeed() const;
+	State getState() const;
 
+	void setState(State);
 	void setPlayerType(int, char); // Populates playerTypes_ array with types of players (int playerNumber, char playerType)
 	void initDeck(); // Initialize the deck (populates deck_ with New Card's)
 	void initPlayers(); // Initialize players (populates players_ with New Player's)
 	void setSeed(int); // Setms seed for the shuffle
 	void shuffle(); // Shuffles the deck
 	void deal(); // Deal 13 Card*'s to each player
-	bool playCard(Card); // Plays card from hand
-	bool discardCard(Card); // Removes card from hand and adds to discard pile
+	bool playCard(Card*); // Plays card from hand
+	bool discardCard(Card*); // Removes card from hand and adds to discard pile
 	void advanceToNextPlayer(); // Change to next player
 	void setHumanToComputer(); // Create new computer player with assignment and delete old human player
 	void deleteCardsAndPlayers();
 	void clearCardsFromTable(); // Empties table of all cards (sets all of 2D array to false)
 	void cleanUp();
-	void updateView();
+	bool hasBeenPlayed(Suit, Rank) const;
 
 private:
 	Card* getCard(Card);
 	std::vector<Player*> players_;
 	std::vector<Card*> deck_;
 	bool currentCardsOut_[4][13] = {{false}};
+	State state_;
 	int firstPlayer_;
 	int currentPlayer_;
 	int seed_;
