@@ -41,7 +41,6 @@ void Controller::startRound(){
 	model_->deal();
 
 	model_->setCurrentPlayer(model_->getFirstPlayer()->getPlayerNo()-1);
-	model_->setState(Model::ROUND_STARTED);
 	model_->setState(Model::IN_PROGRESS);
 }
 

@@ -111,6 +111,19 @@ bool Model::discardCard(Card* card){
 // new player turn
 void Model::advanceToNextPlayer(){
 	currentPlayer_ = (currentPlayer_ + 1) % 4;
+
+	if (getCurrentPlayer()->getHand().size() == 0){
+		clearCardsFromTable();
+		shuffle();
+		deal();
+
+		for (int i = 0; i < 4; i++){
+			getPlayer(i)->newRoundReset();
+		}
+
+		setCurrentPlayer(getFirstPlayer()->getPlayerNo()-1);
+	}
+
 	notify();
 }
 
