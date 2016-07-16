@@ -21,6 +21,8 @@ public:
 private:
 	int playerIndex_;
 
+	void rageButtonClicked();
+
 	Model* model_;
 	View* view_;
 	Controller* controller_;

@@ -16,16 +16,16 @@ bool HumanPlayer::playCard(Card* card){
 }
 
 // discard a card from the hand and add to the discard vector
-bool HumanPlayer::discardCard(Card* discardCard){
+bool HumanPlayer::discardCard(Card* card){
 
 	// get position of the discard card in the hand
-	int pos = std::find(hand_.begin(), hand_.end(), discardCard) - hand_.begin();
+	int pos = std::find(hand_.begin(), hand_.end(), card) - hand_.begin();
 
 	// remove from hand
 	hand_.erase(hand_.begin() + pos);
-	discards_.push_back(discardCard);
-	setRoundScore(getRoundScore() + discardCard->getRank() + 1);
-	setScore(getScore() + discardCard->getRank() + 1);
+	discards_.push_back(card);
+	setRoundScore(getRoundScore() + card->getRank() + 1);
+	setScore(getScore() + card->getRank() + 1);
 
 	return true;
 }

@@ -133,7 +133,6 @@ void View::endGameButtonClicked() {
 void View::setHandDisplayed(vector<Card*> hand, vector<Card*> legalCards){
 
 	bool noLegalPlays = legalCards.empty();
-	printf("Number of legal cards: %lu\n", legalCards.size());
 
 	for (int i = 0; i < 13; i++){
 		if (noLegalPlays && !hand.empty() && i < hand.size()){
@@ -155,7 +154,6 @@ void View::setHandDisplayed(vector<Card*> hand, vector<Card*> legalCards){
 			cardsInHand[i]->setCard(NULL, false, false);
 		}
 	}
-	printf("No error yet\n");
 }
 
 

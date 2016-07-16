@@ -42,17 +42,35 @@ void Controller::startRound(){
 
 	model_->setCurrentPlayer(model_->getFirstPlayer()->getPlayerNo()-1);
 	model_->setState(Model::IN_PROGRESS);
+
+	if (!model_->getCurrentPlayer()->isHuman()){
+		playComputerTurn();
+	}
 }
 
 void Controller::playTurn(Card* card, bool isDiscard){
 	if (!isDiscard){
 		model_->playCard(card);
-		printf("card played\n");
 	} else {
 		model_->discardCard(card);
-		printf("card discarded\n");
 	}
 
 	model_->advanceToNextPlayer();
 
+	if (model_->getState() == Model::GAME_ENDED){
+		return;
+	}
+
+	if (!model_->getCurrentPlayer()->isHuman()){
+		playComputerTurn();
+	}
+
+}
+
+void Controller::playComputerTurn(){
+	if (model_->getCurrentPlayer()->getLegalCards().empty()){
+		playTurn(model_->getCurrentPlayer()->getHand()[0], true);
+	} else {
+		playTurn(model_->getCurrentPlayer()->getLegalCards()[0], false);
+	}
 }

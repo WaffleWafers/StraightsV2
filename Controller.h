@@ -15,6 +15,7 @@ public:
 	void endGame();
 	void setSeed(int);
 	void playTurn(Card*, bool);
+	void playComputerTurn();
 
 private:
 	Model* model_;

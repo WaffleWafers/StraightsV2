@@ -16,6 +16,8 @@ public:
 	Card* getCardToPlay();
 	Card* getCardToDiscard();
 
+	bool shouldDiscard();
+
 	bool isHuman() {return false;}
 };
 

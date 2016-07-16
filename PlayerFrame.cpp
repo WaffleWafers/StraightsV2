@@ -10,6 +10,8 @@ PlayerFrame::PlayerFrame(int playerNumber, Model* model, View* view, Controller*
 	add(mainContainer);
 
 	set_label("Player " + std::to_string(playerIndex_ + 1));
+
+	//rageButton.signal_clicked().connect( sigc::mem_fun( *this, &PlayerFrame::rageButtonClicked ) );
 }
 
 PlayerFrame::~PlayerFrame() {}
@@ -20,4 +22,15 @@ void PlayerFrame::update(){
 
 	pointsLabel.set_label(std::to_string(score) + " points");
 	discardsLabel.set_label(std::to_string(numDiscards) + " discards");
+
+	/*if (model_->getCurrentPlayer()->getPlayerNo() == playerIndex_ + 1){
+		rageButton.set_sensitive(true);
+	} 
+	else {
+		rageButton.set_sensitive(false);
+	}*/
+}
+
+void PlayerFrame::rageButtonClicked(){
+
 }
