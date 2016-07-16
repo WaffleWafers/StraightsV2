@@ -1,4 +1,5 @@
-PlayerFrame.o: PlayerFrame.cpp PlayerFrame.h \
+PlayerFrame.o: PlayerFrame.cpp Model.h Subject.h Card.h ComputerPlayer.h \
+  Player.h HumanPlayer.h PlayerFrame.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/box.h \
   /usr/local/Cellar/glibmm/2.46.3/include/glibmm-2.4/glibmm.h \
   /usr/local/Cellar/glibmm/2.46.3/lib/glibmm-2.4/include/glibmmconfig.h \

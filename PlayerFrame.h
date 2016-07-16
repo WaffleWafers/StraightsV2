@@ -16,9 +16,10 @@ class PlayerFrame : public Gtk::Frame {
 public:
 	PlayerFrame(int, Model*, View*, Controller*);
 	virtual ~PlayerFrame();
+	void update();
 
 private:
-	int playerNumber;
+	int playerIndex_;
 
 	Model* model_;
 	View* view_;

@@ -103,12 +103,16 @@ void View::update() {
 	else if (model_->getState() == Model::IN_PROGRESS){
 		setHandDisplayed(model_->getCurrentPlayer()->getHand(), model_->getCurrentPlayer()->getLegalCards());
 		setTableDisplay();
+		for (int i = 0 ; i < 4 ; i++){
+			playerFrames[i]->update();
+		}
 	}
 
 }
 
 
 void View::newGameButtonClicked() {
+	controller_->endGame();
 	controller_->setSeed(atoi(static_cast<string>(randomSeedEntry.get_text()).c_str()));
 	controller_->startGame();
 }
@@ -126,7 +130,7 @@ void View::setHandDisplayed(vector<Card*> hand, vector<Card*> legalCards){
 	printf("Number of legal cards: %lu\n", legalCards.size());
 
 	for (int i = 0; i < 13; i++){
-		if (noLegalPlays){
+		if (noLegalPlays && !hand.empty() && i < hand.size()){
 			cardsInHand[i]->setCard(hand.at(i), true, true);
 		}
 		else if (!hand.empty() && i < hand.size()){
