@@ -184,7 +184,7 @@ void Model::cleanUp(){
 
 // retrieve card pointer from deck
 Card* Model::getCard(Card card){
-	Card* c;
+	Card* c = nullptr;
 
 	for (unsigned int i = 0 ; i < deck_.size() ; i++){
 		if (*deck_[i] == card){
