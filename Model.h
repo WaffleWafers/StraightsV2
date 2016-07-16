@@ -15,7 +15,7 @@ public:
 	Model(int);
 	~Model();
 
-	enum State { ROUND_STARTED, IN_PROGRESS };
+	enum State { IN_PROGRESS, ROUND_ENDED, GAME_ENDED };
 
 	void setCurrentPlayer(int);
 	// modifies this.currentPlayer_
@@ -43,6 +43,7 @@ public:
 	void clearCardsFromTable(); // Empties table of all cards (sets all of 2D array to false)
 	void cleanUp();
 	bool hasBeenPlayed(Suit, Rank) const;
+	bool playerReachedPointLimit() const;
 
 private:
 	Card* getCard(Card);

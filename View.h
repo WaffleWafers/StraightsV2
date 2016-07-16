@@ -5,6 +5,7 @@
 #include "PlayerFrame.h"
 #include "CardButton.h"
 #include "NewGameDialog.h"
+#include "RoundEndDialog.h"
 #include "DeckGUI.h"
 #include "Observer.h"
 #include "Controller.h"
@@ -34,6 +35,7 @@ private:
 	void endGameButtonClicked();
 
 	void setTableDisplay();
+	void resetTableDisplay();
 
 	DeckGUI deck;
 

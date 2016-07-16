@@ -113,6 +113,13 @@ void Model::advanceToNextPlayer(){
 	currentPlayer_ = (currentPlayer_ + 1) % 4;
 
 	if (getCurrentPlayer()->getHand().size() == 0){
+
+		if (playerReachedPointLimit()){
+			setState(GAME_ENDED);
+			cleanUp();			
+			return;
+		}
+
 		clearCardsFromTable();
 		shuffle();
 		deal();
@@ -122,9 +129,10 @@ void Model::advanceToNextPlayer(){
 		}
 
 		setCurrentPlayer(getFirstPlayer()->getPlayerNo()-1);
+		setState(ROUND_ENDED);
 	}
 
-	notify();
+	setState(IN_PROGRESS);
 }
 
 // when player ragequits, replace with computer player
@@ -190,4 +198,13 @@ void Model::setState(State state) {
 
 bool Model::hasBeenPlayed(Suit s, Rank r) const{
 	return currentCardsOut_[s][r];
+}
+
+bool Model::playerReachedPointLimit() const{
+	for (int i = 0 ; i < 4 ; i++){
+		if (getPlayer(i)->getScore() >= 80){
+			return true;
+		}
+	}
+	return false;
 }

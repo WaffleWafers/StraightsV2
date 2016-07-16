@@ -1062,5 +1062,6 @@ CardButton.o: CardButton.cpp CardButton.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/uimanager.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/actiongroup.h \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/viewport.h \
-  PlayerFrame.h NewGameDialog.h DeckGUI.h model.h Subject.h \
-  ComputerPlayer.h Player.h HumanPlayer.h Observer.h Controller.h
+  PlayerFrame.h NewGameDialog.h RoundEndDialog.h DeckGUI.h model.h \
+  Subject.h ComputerPlayer.h Player.h HumanPlayer.h Observer.h \
+  Controller.h

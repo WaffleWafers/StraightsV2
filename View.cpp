@@ -96,18 +96,24 @@ View::~View() {
 
 
 void View::update() {
-	if (model_->getState() == Model::ROUND_STARTED){
-		setHandDisplayed(model_->getCurrentPlayer()->getHand(), model_->getCurrentPlayer()->getLegalCards());
-		setTableDisplay();
-	}
-	else if (model_->getState() == Model::IN_PROGRESS){
+	if (model_->getState() == Model::IN_PROGRESS){
 		setHandDisplayed(model_->getCurrentPlayer()->getHand(), model_->getCurrentPlayer()->getLegalCards());
 		setTableDisplay();
 		for (int i = 0 ; i < 4 ; i++){
 			playerFrames[i]->update();
 		}
 	}
-
+	else if (model_->getState() == Model::ROUND_ENDED){
+		RoundEndDialog newRoundEndDialog( *this, model_, false );
+	}
+	else if (model_->getState() == Model::GAME_ENDED){
+		setHandDisplayed(model_->getCurrentPlayer()->getHand(), model_->getCurrentPlayer()->getLegalCards());
+		resetTableDisplay();
+		for (int i = 0 ; i < 4 ; i++){
+			playerFrames[i]->update();
+		}
+		RoundEndDialog newRoundEndDialog( *this, model_, true );
+	}
 }
 
 
@@ -150,6 +156,15 @@ void View::setHandDisplayed(vector<Card*> hand, vector<Card*> legalCards){
 		}
 	}
 	printf("No error yet\n");
+}
+
+
+void View::resetTableDisplay(){
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 13; j++) {
+			cardsOnTable[i][j]->set(deck.getCardImage(static_cast<Suit>(i), static_cast<Rank>(j)));
+		}
+	}
 }
 
 
