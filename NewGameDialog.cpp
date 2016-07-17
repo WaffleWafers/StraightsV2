@@ -28,11 +28,9 @@ NewGameDialog::NewGameDialog( Gtk::Window & parentWindow, Model* model) : Dialog
 		case Gtk::RESPONSE_OK:
 			for ( int i = 0 ; i < 4; i++ ) {
 				if ( checkButtons[i]->get_active() ) {
-					std::cout << "Player " << i+1 << " is human." << std::endl;
 					model_->setPlayerType(i, 'h');
 				}
 				else{
-					std::cout << "Player " << i+1 << " a computer." << std::endl;
 					model_->setPlayerType(i, 'c');
 				}
 			}

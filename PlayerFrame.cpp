@@ -33,7 +33,7 @@ void PlayerFrame::update(){
 	pointsLabel.set_label(std::to_string(score) + " points");
 	discardsLabel.set_label(std::to_string(numDiscards) + " discards");
 
-	if (model_->getCurrentPlayer()->getPlayerNo() == playerIndex_ + 1){
+	if (model_->getCurrentPlayer()->getPlayerNo() == playerIndex_ + 1 && model_->getState() != Model::GAME_ENDED){
 		rageButton.set_sensitive(true);
 	} 
 	else {

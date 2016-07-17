@@ -54,6 +54,8 @@ private:
 	Gtk::HBox playerListContainer;
 	PlayerFrame* playerFrames[4];
 
+	Gtk::Entry turnInstructions;
+
 	Gtk::Frame currentHandFrame;
 	Gtk::HBox handContainer;
 	CardButton* cardsInHand[13];

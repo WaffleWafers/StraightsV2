@@ -18,6 +18,7 @@ View::View(Controller *c, Model *m) : model_(m), controller_(c), topToolbar(), p
 	mainContainer.pack_start(topToolbar);
 	mainContainer.pack_start(tableFrame);
 	mainContainer.pack_start(playerListContainer);
+	mainContainer.pack_start(turnInstructions);
 	mainContainer.pack_start(currentHandFrame);
 	mainContainer.pack_start(playLog);
 
@@ -57,6 +58,8 @@ View::View(Controller *c, Model *m) : model_(m), controller_(c), topToolbar(), p
 		handContainer.pack_start(*cardsInHand[i]);
 	}
 
+
+	turnInstructions.set_editable(false);
 
 	currentHandFrame.set_label("Your hand");
 	currentHandFrame.add(handContainer);
@@ -102,6 +105,13 @@ void View::update() {
 	}
 
 	if (model_->getState() == Model::IN_PROGRESS){
+		if (model_->getCurrentPlayer()->getLegalCards().empty()){
+			turnInstructions.set_text("Player " + to_string(model_->getCurrentPlayer()->getPlayerNo()) + "'s turn - You have no legal plays. Select a card to discard.");
+		}
+		else {
+			turnInstructions.set_text("Player " + to_string(model_->getCurrentPlayer()->getPlayerNo()) + "'s turn - Select a card to play.");
+		}
+
 		setTableDisplay();
 	}
 	else if (model_->getState() == Model::ROUND_ENDED){
@@ -109,6 +119,7 @@ void View::update() {
 		RoundEndDialog newRoundEndDialog( *this, model_, false );
 	}
 	else if (model_->getState() == Model::GAME_ENDED){
+		turnInstructions.set_text("");
 		resetTableDisplay();
 		RoundEndDialog newRoundEndDialog( *this, model_, true );
 	}
