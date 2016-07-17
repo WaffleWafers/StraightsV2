@@ -72,8 +72,6 @@ View::View(Controller *c, Model *m) : model_(m), controller_(c), topToolbar(), n
 	// Display everything
 	show_all();
 
-	NewGameDialog newGameDialog( *this, model_ );
-
 	// Register view as observer of model
 	model_->subscribe(this);
 
@@ -120,6 +118,7 @@ void View::update() {
 void View::newGameButtonClicked() {
 	controller_->endGame();
 	controller_->setSeed(atoi(static_cast<string>(randomSeedEntry.get_text()).c_str()));
+	NewGameDialog newGameDialog( *this, model_ );
 	controller_->startGame();
 }
 

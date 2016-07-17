@@ -116,7 +116,7 @@ void Model::advanceToNextPlayer(){
 
 		if (playerReachedPointLimit()){
 			setState(GAME_ENDED);
-			cleanUp();			
+			cleanUp();
 			return;
 		}
 
