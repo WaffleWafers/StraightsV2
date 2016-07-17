@@ -50,16 +50,19 @@ void Controller::startRound(){
 }
 
 void Controller::playTurn(Card* card, bool isDiscard){
+	// User action (either play a card or discard a card)
 	if (!isDiscard){
 		model_->playCard(card);
 	} else {
 		model_->discardCard(card);
 	}
-
+	// update log for history of played moves
 	model_->setLogMessage(card, isDiscard);
 
 	model_->advanceToNextPlayer();
 
+
+	// end game detection (80 pts)
 	if (model_->getState() == Model::GAME_ENDED){
 		return;
 	}
@@ -70,6 +73,7 @@ void Controller::playTurn(Card* card, bool isDiscard){
 
 }
 
+// CPU AI move
 void Controller::playComputerTurn(){
 	if (model_->getCurrentPlayer()->getLegalCards().empty()){
 		playTurn(model_->getCurrentPlayer()->getHand()[0], true);

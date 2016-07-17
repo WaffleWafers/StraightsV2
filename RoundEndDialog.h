@@ -9,6 +9,7 @@
 
 class Model;
 
+// GUI  dialog that shows when game is over
 class RoundEndDialog : public Gtk::Dialog {
 public:
 	RoundEndDialog(Gtk::Window& parentWindow, Model*, bool);
@@ -17,7 +18,7 @@ private:
 	Model* model_;
 	bool gameEnded_;
 	
-	int getWinningScore();
+	int getWinningScore(); // get winning score
 
 	Gtk::VBox* scoreContainer;
 	Gtk::Label* playerScoreLabel[4];

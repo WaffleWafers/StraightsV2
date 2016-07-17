@@ -26,6 +26,7 @@ NewGameDialog::NewGameDialog( Gtk::Window & parentWindow, Model* model) : Dialog
 	int result = run();
 	switch (result) {
 		case Gtk::RESPONSE_OK:
+			// sets player types based on checkboxes from dialog box
 			for ( int i = 0 ; i < 4; i++ ) {
 				if ( checkButtons[i]->get_active() ) {
 					model_->setPlayerType(i, 'h');

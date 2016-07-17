@@ -18,14 +18,15 @@ public:
 	void setCard(Card*, bool enableButton, bool discard);
 
 private:
+	// MVC architecture
 	View* view_;
 	Controller* controller_;
 
-	void cardPlayed();
+	void cardPlayed(); // plays card when pressed
 
 	Gtk::Image* image_;
-	Card* currentCard_;
-	bool isDiscard_;
+	Card* currentCard_; // current card information of button
+	bool isDiscard_; // if card was discarded
 };
 
 #endif

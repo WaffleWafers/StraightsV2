@@ -5,20 +5,17 @@
 #include "Player.h"
 #include "Card.h"
 
+// CPU controlled player for ragequits/pre-set CPU
 class ComputerPlayer: public Player{
 public:
 	ComputerPlayer(int num, Model* model) : Player(num, model) {};
 	ComputerPlayer(const Player& p): Player(p){};
 
+	// player actions for computer
 	bool playCard(Card*);
 	bool discardCard(Card*);
 
-	Card* getCardToPlay();
-	Card* getCardToDiscard();
-
-	bool shouldDiscard();
-
-	bool isHuman() {return false;}
+	bool isHuman() {return false;} // indicate is computer player
 };
 
 #endif

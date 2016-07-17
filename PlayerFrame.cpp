@@ -12,6 +12,7 @@ PlayerFrame::PlayerFrame(int playerNumber, Model* model, View* view, Controller*
 
 	set_label("Player " + std::to_string(playerIndex_ + 1));
 
+	// even listener
 	rageButton.signal_clicked().connect( sigc::mem_fun( *this, &PlayerFrame::rageButtonClicked ) );
 
 	rageButton.set_sensitive(false);
@@ -19,6 +20,8 @@ PlayerFrame::PlayerFrame(int playerNumber, Model* model, View* view, Controller*
 
 PlayerFrame::~PlayerFrame() {}
 
+// updates player scores and discard numbers
+// only enables rage if it is player's turn
 void PlayerFrame::update(){
 	int score = model_->getPlayer(playerIndex_)->getScore();
 	int numDiscards = model_->getPlayer(playerIndex_)->getDiscards().size();

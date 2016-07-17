@@ -98,14 +98,16 @@ View::~View() {
 	}
 }
 
-
+// update information to be displayed
 void View::update() {
-	playLog.addToLog(model_->getLogMessage());
+	playLog.addToLog(model_->getLogMessage()); // update log
 	setHandDisplayed(model_->getCurrentPlayer()->getHand(), model_->getCurrentPlayer()->getLegalCards());
 	for (int i = 0 ; i < 4 ; i++){
 		playerFrames[i]->update();
 	}
 
+	// update message for user
+	// and updates view based on model state
 	if (model_->getState() == Model::IN_PROGRESS){
 		if (model_->getCurrentPlayer()->getLegalCards().empty()){
 			turnInstructions.set_text("Player " + to_string(model_->getCurrentPlayer()->getPlayerNo()) + "'s turn - You have no legal plays. Select a card to discard.");
@@ -127,7 +129,7 @@ void View::update() {
 	}
 }
 
-
+// new game start
 void View::newGameButtonClicked() {
 	controller_->endGame();
 	playLog.startNewLog();
@@ -136,13 +138,13 @@ void View::newGameButtonClicked() {
 	controller_->startGame();
 }
 
-
+// close game
 void View::endGameButtonClicked() {
 	controller_->endGame();
 	exit(EXIT_SUCCESS);
 }
 
-
+// sets the hand to indicate legal cards
 void View::setHandDisplayed(vector<Card*> hand, vector<Card*> legalCards){
 
 	bool noLegalPlays = legalCards.empty();

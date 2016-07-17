@@ -9,16 +9,23 @@
 #include "ComputerPlayer.h"
 #include "HumanPlayer.h"
 
+// MVC Architecture "Model"
+// Handles all the information from controller and the game
 class Model: public Subject{
 public:
 	Model();
 	Model(int);
 	~Model();
 
+	// Game has 3 states
+	// 1) in progress ( all players have cards, no one has reached 80 points)
+	// 2) round end (all players are out of cards, no one has reached 80 points)
+	// 3) game ended (80 points have been reached)
 	enum State { IN_PROGRESS, ROUND_ENDED, GAME_ENDED };
 
+	// modifies this.currentPlayer_ directly
 	void setCurrentPlayer(int);
-	// modifies this.currentPlayer_
+	
 
 	// getters
 	Player* getFirstPlayer() const;
@@ -27,6 +34,7 @@ public:
 	std::vector<Card*> getDeck() const;
 	int getSeed() const;
 	State getState() const;
+	// Get the message of player move for display on game log
 	std::string getLogMessage() const;
 
 	void setState(State);
@@ -43,21 +51,28 @@ public:
 	void deleteCardsAndPlayers();
 	void clearCardsFromTable(); // Empties table of all cards (sets all of 2D array to false)
 	void cleanUp();
-	bool hasBeenPlayed(Suit, Rank) const;
+
+	bool hasBeenPlayed(Suit, Rank) const; // check if card has been played
 	bool playerReachedPointLimit() const;
-	void setLogMessage(Card*, bool);
+
+	// functions for log messages ( either a string, or card information)
+	void setLogMessage(Card*, bool); // bool = is move a discard
 	void setLogMessage(std::string);
 
 private:
 	Card* getCard(Card);
-	std::vector<Player*> players_;
-	std::vector<Card*> deck_;
-	bool currentCardsOut_[4][13] = {{false}};
-	State state_;
+
+	std::vector<Player*> players_; // holds all players
+	std::vector<Card*> deck_; // holds all card obj's
+
+	bool currentCardsOut_[4][13] = {{false}}; // array for cards played
+
+	State state_; // game state (3 states)
 	int firstPlayer_;
-	int currentPlayer_;
+	int currentPlayer_; // current player's turn
 	int seed_;
 	char playerTypes_[4];
+
 	std::string logMessage_;
 };
 

@@ -10,6 +10,8 @@
 
 class Model;
 
+// GUI related dialog box
+// initially appears so user can set which players are computers/user controlled
 class NewGameDialog : public Gtk::Dialog {
 public:
 	NewGameDialog(Gtk::Window& parentWindow, Model*);

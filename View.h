@@ -16,7 +16,8 @@
 class Controller;
 class Model;
 
-
+// MVC "View"
+// Main GUI view that holds all containers and frames
 class View : public Gtk::Window, public Observer {
 public:
 	View( Controller*, Model* );
@@ -35,8 +36,8 @@ private:
 	void newGameButtonClicked();
 	void endGameButtonClicked();
 
-	void setTableDisplay();
-	void resetTableDisplay();
+	void setTableDisplay(); // set played card displays
+	void resetTableDisplay(); // clears board
 
 	DeckGUI deck;
 

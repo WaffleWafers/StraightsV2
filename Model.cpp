@@ -206,6 +206,7 @@ void Model::setState(State state) {
 	notify();
 }
 
+// checks if a card has been played
 bool Model::hasBeenPlayed(Suit s, Rank r) const{
 	return currentCardsOut_[s][r];
 }
@@ -219,6 +220,7 @@ bool Model::playerReachedPointLimit() const{
 	return false;
 }
 
+// sets a log message on which card has been played/discarded
 void Model::setLogMessage(Card* card, bool isDiscard){
 	logMessage_ = "\n";
 
@@ -228,8 +230,6 @@ void Model::setLogMessage(Card* card, bool isDiscard){
 		logMessage_ += "CPU " + std::to_string(currentPlayer_ + 1) + " ";
 	}
 
-	//std::ostream os;
-	//os << *card;
 	std::stringstream ss;
     ss << *card;
 	std::string cardPlayed = ss.str();

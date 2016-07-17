@@ -7,6 +7,9 @@
 
 class Model;
 
+// Player class: inherited by ComputerPlayer and HumanPlayer
+// Base for all player related actions for the game
+// and information getters/setters
 class Player{
 public:
 	explicit Player(int, Model*);
@@ -42,14 +45,14 @@ public:
 	void newRoundReset();
 
 protected:
-	Model* model_;
-	std::vector<Card*> hand_;
-	std::vector<Card*> discards_;
-	bool validPlay_;
+	Model* model_; // MVC model
+	std::vector<Card*> hand_;	// player hand
+	std::vector<Card*> discards_; // player discard pile
+	bool validPlay_; // player has a valid play
 	int score_;
-	int oldScore_;
-	int roundScore_;
-	int playerNo_;
+	int oldScore_; // score from previous round
+	int roundScore_; // score obtained from round
+	int playerNo_; // 1-4
 };
 
 #endif

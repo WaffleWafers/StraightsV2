@@ -14,6 +14,7 @@ RoundEndDialog::RoundEndDialog( Gtk::Window & parentWindow, Model* model, bool g
 	scoreContainer = this->get_vbox();
 
 	// Set up a group of score labels
+	// indicates winner 
 	for ( int i = 3 ; i >=0 ; i-- ) {
 		int score = model_->getPlayer(i)->getScore();
 

@@ -40,11 +40,10 @@ void Player::addCard(Card* card){
 	hand_.push_back(card);
 }
 
-
+// Return all legal cards in players hand
 std::vector<Card*> Player::getLegalCards(){
 
 	std::vector<Card*> legalCards = std::vector<Card*>();
-
 
 	for (unsigned int i = 0; i < hand_.size(); i++){
 		int cardRank = (hand_[i])->getRank(); 

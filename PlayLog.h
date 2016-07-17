@@ -5,6 +5,7 @@
 
 #include <string>
 
+// GUI scrollable dialog that displays history of moves
 class PlayLog : public Gtk::ScrolledWindow {
 public:
 	PlayLog();
