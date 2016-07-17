@@ -1,4 +1,6 @@
 #include <random>
+#include <iostream>
+#include <sstream>
 #include "Model.h"
 
 //initialize with 0 seed
@@ -31,6 +33,10 @@ Player* Model::getPlayer(int index) const{
 
 std::vector<Card*> Model::getDeck() const{
 	return deck_;
+}
+
+std::string Model::getLogMessage() const{
+	return logMessage_;
 }
 
 void Model::setPlayerType(int playerIndex, char type){
@@ -115,10 +121,13 @@ void Model::advanceToNextPlayer(){
 	if (getCurrentPlayer()->getHand().size() == 0){
 
 		if (playerReachedPointLimit()){
+			setLogMessage("\nGame over. A winner(s) has been crowned!");
 			setState(GAME_ENDED);
 			cleanUp();
 			return;
 		}
+
+		setLogMessage("\nRound ended!");
 
 		clearCardsFromTable();
 		shuffle();
@@ -130,6 +139,7 @@ void Model::advanceToNextPlayer(){
 
 		setCurrentPlayer(getFirstPlayer()->getPlayerNo()-1);
 		setState(ROUND_ENDED);
+		return;
 	}
 
 	setState(IN_PROGRESS);
@@ -207,4 +217,31 @@ bool Model::playerReachedPointLimit() const{
 		}
 	}
 	return false;
+}
+
+void Model::setLogMessage(Card* card, bool isDiscard){
+	logMessage_ = "\n";
+
+	if (getCurrentPlayer()->isHuman()){
+		logMessage_ += "Player " + std::to_string(currentPlayer_ + 1) + " ";
+	} else {
+		logMessage_ += "CPU " + std::to_string(currentPlayer_ + 1) + " ";
+	}
+
+	//std::ostream os;
+	//os << *card;
+	std::stringstream ss;
+    ss << *card;
+	std::string cardPlayed = ss.str();
+
+	if (isDiscard){
+		logMessage_ += "discards " + cardPlayed + ".";
+	} else {
+		logMessage_ += "plays " + cardPlayed + ".";
+	}
+
+}
+
+void Model::setLogMessage(std::string message){
+	logMessage_ = message;
 }

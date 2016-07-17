@@ -40,7 +40,8 @@ void Controller::startRound(){
 	model_->shuffle();
 	model_->deal();
 
-	model_->setCurrentPlayer(model_->getFirstPlayer()->getPlayerNo()-1);
+	model_->setLogMessage("");
+	model_->setCurrentPlayer(model_->getFirstPlayer()->getPlayerNo() - 1);
 	model_->setState(Model::IN_PROGRESS);
 
 	if (!model_->getCurrentPlayer()->isHuman()){
@@ -54,6 +55,8 @@ void Controller::playTurn(Card* card, bool isDiscard){
 	} else {
 		model_->discardCard(card);
 	}
+
+	model_->setLogMessage(card, isDiscard);
 
 	model_->advanceToNextPlayer();
 

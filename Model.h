@@ -27,6 +27,7 @@ public:
 	std::vector<Card*> getDeck() const;
 	int getSeed() const;
 	State getState() const;
+	std::string getLogMessage() const;
 
 	void setState(State);
 	void setPlayerType(int, char); // Populates playerTypes_ array with types of players (int playerNumber, char playerType)
@@ -44,6 +45,8 @@ public:
 	void cleanUp();
 	bool hasBeenPlayed(Suit, Rank) const;
 	bool playerReachedPointLimit() const;
+	void setLogMessage(Card*, bool);
+	void setLogMessage(std::string);
 
 private:
 	Card* getCard(Card);
@@ -55,6 +58,7 @@ private:
 	int currentPlayer_;
 	int seed_;
 	char playerTypes_[4];
+	std::string logMessage_;
 };
 
 #endif

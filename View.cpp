@@ -6,19 +6,20 @@ using namespace std;
 
 // Creates buttons with labels. Sets butBox elements to have the same size, 
 // with 10 pixels between widgets
-View::View(Controller *c, Model *m) : model_(m), controller_(c), topToolbar(), newGameButton("Start new game with seed:"), endGameButton("End current game"), table(4, 13, true){
+View::View(Controller *c, Model *m) : model_(m), controller_(c), topToolbar(), playLog(m, this, c), newGameButton("Start new game with seed:"), endGameButton("End current game"), table(4, 13, true){
 
 	// Sets some properties of the window.
 	set_title( "Straights" );
 	set_border_width( 10 );
 	set_position(Gtk::WIN_POS_CENTER);
-
+	set_resizable(false);
 
 	// Properties of main container of game
 	mainContainer.pack_start(topToolbar);
 	mainContainer.pack_start(tableFrame);
 	mainContainer.pack_start(playerListContainer);
 	mainContainer.pack_start(currentHandFrame);
+	mainContainer.pack_start(playLog);
 
 
 	// Add random seed, new game and end game buttons to the toolbar
@@ -94,22 +95,21 @@ View::~View() {
 
 
 void View::update() {
+	playLog.addToLog(model_->getLogMessage());
+	setHandDisplayed(model_->getCurrentPlayer()->getHand(), model_->getCurrentPlayer()->getLegalCards());
+	for (int i = 0 ; i < 4 ; i++){
+		playerFrames[i]->update();
+	}
+
 	if (model_->getState() == Model::IN_PROGRESS){
-		setHandDisplayed(model_->getCurrentPlayer()->getHand(), model_->getCurrentPlayer()->getLegalCards());
 		setTableDisplay();
-		for (int i = 0 ; i < 4 ; i++){
-			playerFrames[i]->update();
-		}
 	}
 	else if (model_->getState() == Model::ROUND_ENDED){
+		setTableDisplay();
 		RoundEndDialog newRoundEndDialog( *this, model_, false );
 	}
 	else if (model_->getState() == Model::GAME_ENDED){
-		setHandDisplayed(model_->getCurrentPlayer()->getHand(), model_->getCurrentPlayer()->getLegalCards());
 		resetTableDisplay();
-		for (int i = 0 ; i < 4 ; i++){
-			playerFrames[i]->update();
-		}
 		RoundEndDialog newRoundEndDialog( *this, model_, true );
 	}
 }
@@ -117,6 +117,7 @@ void View::update() {
 
 void View::newGameButtonClicked() {
 	controller_->endGame();
+	playLog.startNewLog();
 	controller_->setSeed(atoi(static_cast<string>(randomSeedEntry.get_text()).c_str()));
 	NewGameDialog newGameDialog( *this, model_ );
 	controller_->startGame();

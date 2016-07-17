@@ -1063,4 +1063,4 @@ Straights.o: Straights.cpp \
   /usr/local/Cellar/gtkmm/2.24.4_2/include/gtkmm-2.4/gtkmm/viewport.h \
   Model.h Subject.h Card.h ComputerPlayer.h Player.h HumanPlayer.h \
   View.h PlayerFrame.h CardButton.h NewGameDialog.h RoundEndDialog.h \
-  DeckGUI.h Observer.h Controller.h
+  PlayLog.h DeckGUI.h Observer.h Controller.h

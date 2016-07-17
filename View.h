@@ -6,6 +6,7 @@
 #include "CardButton.h"
 #include "NewGameDialog.h"
 #include "RoundEndDialog.h"
+#include "PlayLog.h"
 #include "DeckGUI.h"
 #include "Observer.h"
 #include "Controller.h"
@@ -56,6 +57,8 @@ private:
 	Gtk::Frame currentHandFrame;
 	Gtk::HBox handContainer;
 	CardButton* cardsInHand[13];
+
+	PlayLog playLog;
 
 }; // View
 
