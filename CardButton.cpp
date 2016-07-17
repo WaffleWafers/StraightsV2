@@ -1,9 +1,8 @@
 #include "CardButton.h"
 #include "View.h"
-#include "Model.h"
 #include "Controller.h"
 
-CardButton::CardButton(Model* model, View* view, Controller* controller): model_(model), view_(view), controller_(controller), isDiscard_(false) {
+CardButton::CardButton(View* view, Controller* controller): view_(view), controller_(controller), isDiscard_(false) {
 
 	image_ = new Gtk::Image(view_->getNullCardImage());
 	set_image(*image_);

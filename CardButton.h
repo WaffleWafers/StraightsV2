@@ -8,18 +8,16 @@
 #include <string>
 #include "Card.h"
 
-class Model;
 class View;
 class Controller;
 
 class CardButton : public Gtk::Button {
 public:
-	CardButton(Model*, View*, Controller*);
+	CardButton(View*, Controller*);
 	virtual ~CardButton();
 	void setCard(Card*, bool enableButton, bool discard);
 
 private:
-	Model* model_;
 	View* view_;
 	Controller* controller_;
 

@@ -1,8 +1,6 @@
-#include "Model.h"
-#include "Controller.h"
 #include "PlayLog.h"
 
-PlayLog::PlayLog(Model* model, View* view, Controller* controller) : model_(model), view_(view), controller_(controller) {
+PlayLog::PlayLog() {
 
 	add(textContainer);
 	set_policy(Gtk::POLICY_AUTOMATIC, Gtk::POLICY_AUTOMATIC);

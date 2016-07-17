@@ -5,24 +5,14 @@
 
 #include <string>
 
-class Model;
-class View;
-class Controller;
-
 class PlayLog : public Gtk::ScrolledWindow {
 public:
-	PlayLog(Model*, View*, Controller*);
+	PlayLog();
 	virtual ~PlayLog();
-	void appendWith(std::string);
-	void clear();
 	void startNewLog();
 	void addToLog(std::string);
 
 private:
-
-	Model* model_;
-	View* view_;
-	Controller* controller_;
 
 	Gtk::TextView textContainer;
   

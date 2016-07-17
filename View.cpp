@@ -6,7 +6,7 @@ using namespace std;
 
 // Creates buttons with labels. Sets butBox elements to have the same size, 
 // with 10 pixels between widgets
-View::View(Controller *c, Model *m) : model_(m), controller_(c), topToolbar(), playLog(m, this, c), newGameButton("Start new game with seed:"), endGameButton("End current game"), table(4, 13, true){
+View::View(Controller *c, Model *m) : model_(m), controller_(c), topToolbar(), newGameButton("Start new game with seed:"), endGameButton("End current game"), table(4, 13, true){
 
 	// Sets some properties of the window.
 	set_title( "Straights" );
@@ -54,12 +54,14 @@ View::View(Controller *c, Model *m) : model_(m), controller_(c), topToolbar(), p
 
 	// Set up hand display 
 	for (int i = 0; i < 13; i++) {
-		cardsInHand[i] = new CardButton(model_, this, controller_);
+		cardsInHand[i] = new CardButton(this, controller_);
 		handContainer.pack_start(*cardsInHand[i]);
 	}
 
 
 	turnInstructions.set_editable(false);
+	turnInstructions.set_alignment(0.5);
+
 
 	currentHandFrame.set_label("Your hand");
 	currentHandFrame.add(handContainer);
