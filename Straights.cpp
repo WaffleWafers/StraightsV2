@@ -17,5 +17,4 @@ int main( int argc, char * argv[] ) {
 	Gtk::Main::run( view );					// Show the window and return when it is closed
 
 	return 0;
-
 }
